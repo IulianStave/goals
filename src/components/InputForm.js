@@ -1,10 +1,11 @@
 import React from "react";
+import '../styles/App.css';
 
 const InputForm = props => {
   return (
-    <form onSubmit={props.newItemSubmitHandler} className="goalsInput">
-      <input
-        className="input"
+    <form onSubmit={props.newItemSubmitHandler} 
+      className="goalsInput">
+      <input  
         type="text"
         value={props.pendingItem}
         placeholder="Add aaaa goal"
@@ -12,7 +13,7 @@ const InputForm = props => {
       />
       <button
         type="submit" name="submit" value="submit">
-        Add goal
+        add
           </button>
     </form>
   )
