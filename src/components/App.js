@@ -1,10 +1,12 @@
 import React from 'react';
 import '../styles/App.css';
+import InputForm from './InputForm';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      list: [],
       pendingItem: ""
     };
   }
@@ -14,29 +16,35 @@ class App extends React.Component {
         <header>
           <h3>Goals</h3>
         </header>
-        <form className="goalsInput">
-          <input
-            className="input"
-            type="text"
-            value={this.state.pendingItem}
-            placeholder="Add an item"
-            onChange={this.handleGoalInput}
-          />
-          <button
-            type="submit" name="submit" value="submit">
-            Add goal
-          </button>
-        </form>
-        <div> {this.state.pendingItem}</div>
+        <InputForm
+          newItemSubmitHandler={this.newItemSubmitHandler}
+          handleGoalInput={this.handleGoalInput}
+          // pendingItem={this.state.pendingItem}
+          value={this.state.pendingItem}
+        />
+        {/* <div> {this.state.pendingItem}</div> */}
 
       </div>
     );
   }
 
   handleGoalInput = e => {
-    this.setState({pendingItem: e.target.value})
-   }
-  }
+    this.setState({ pendingItem: e.target.value })
+  };
+  newItemSubmitHandler = e => {
+    e.preventDefault();
+    this.setState({
+      list: [
+        {
+          name: this.state.pendingItem,
+        },
+        ...this.state.list
+      ],
+      pendingItem: ""
+    });
+  };
+};
+
 
 
 export default App;
