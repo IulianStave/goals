@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Lato;
+    src: url("https://fonts.googleapis.com/css?family=Lato:300,400,900,900i");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(244, 243, 243);
+    font-family: "Lato", sans-serif;
+}
+
+.wrapper {
+    max-width: 480px;
+    margin: auto;
+    background: #fff;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
