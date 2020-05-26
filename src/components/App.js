@@ -22,7 +22,7 @@ class App extends React.Component {
           newItemSubmitHandler={this.newItemSubmitHandler}
           handleGoalInput={this.handleGoalInput}
           // pendingItem={this.state.pendingItem}
-          value={this.state.pendingItem}
+          pendingItem={this.state.pendingItem}
         />
 
         {/* <div> {this.state.pendingItem}</div> */}
@@ -37,7 +37,12 @@ class App extends React.Component {
 
   newItemSubmitHandler = (e) => {
     e.preventDefault();
-    if (this.state.pendingItem === "") return;
+    if (this.state.pendingItem === "") {
+      return;
+    } else {
+      //console.log("not empty");
+
+    }
     this.setState({
       list: [
         {
