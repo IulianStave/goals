@@ -1,15 +1,16 @@
-import React from 'react';
-import '../styles/App.css';
-import InputForm from './InputForm';
+import React from "react";
+import "../styles/App.css";
+import InputForm from "./InputForm";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       list: [],
-      pendingItem: ""
+      pendingItem: "",
     };
   }
+  
   render() {
     return (
       <div className="wrapper">
@@ -23,28 +24,26 @@ class App extends React.Component {
           value={this.state.pendingItem}
         />
         {/* <div> {this.state.pendingItem}</div> */}
-
       </div>
     );
   }
 
-  handleGoalInput = e => {
-    this.setState({ pendingItem: e.target.value })
+  handleGoalInput = (e) => {
+    this.setState({ pendingItem: e.target.value });
   };
-  newItemSubmitHandler = e => {
+
+  newItemSubmitHandler = (e) => {
     e.preventDefault();
     this.setState({
       list: [
         {
-          name: this.state.pendingItem,
+          goal: this.state.pendingItem,
         },
-        ...this.state.list
+        ...this.state.list,
       ],
-      pendingItem: ""
+      pendingItem: "",
     });
   };
-};
-
-
+}
 
 export default App;
