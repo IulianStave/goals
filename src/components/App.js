@@ -37,6 +37,7 @@ class App extends React.Component {
 
   newItemSubmitHandler = (e) => {
     e.preventDefault();
+    if (this.state.pendingItem === "") return;
     this.setState({
       list: [
         {
@@ -50,7 +51,7 @@ class App extends React.Component {
 
   handleRemove = (index) => {
     const newState = this.state.list.filter(
-      item => this.state.list.indexOf(item) !== index
+      (item) => this.state.list.indexOf(item) !== index
     );
 
     this.setState({
