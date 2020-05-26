@@ -7,7 +7,7 @@ const InputForm = (props) => {
       <input
         type="text"
         value={props.pendingItem}
-        placeholder="Add aaaa goal"
+        placeholder="What is your goal?"
         onChange={props.handleGoalInput}
       />
       <button type="submit" name="submit" value="submit">
