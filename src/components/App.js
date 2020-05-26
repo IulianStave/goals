@@ -11,7 +11,7 @@ class App extends React.Component {
       pendingItem: "",
     };
   }
-  
+
   render() {
     return (
       <div className="wrapper">
@@ -24,9 +24,9 @@ class App extends React.Component {
           // pendingItem={this.state.pendingItem}
           value={this.state.pendingItem}
         />
-        
+
         {/* <div> {this.state.pendingItem}</div> */}
-        <List list={this.state.list}/>
+        <List handleRemove={this.handleRemove} list={this.state.list} />
       </div>
     );
   }
@@ -45,6 +45,16 @@ class App extends React.Component {
         ...this.state.list,
       ],
       pendingItem: "",
+    });
+  };
+
+  handleRemove = (index) => {
+    const newState = this.state.list.filter(
+      item => this.state.list.indexOf(item) !== index
+    );
+
+    this.setState({
+      list: newState,
     });
   };
 }
