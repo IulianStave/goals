@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/App.css";
 import InputForm from "./InputForm";
+import List from "./List";
 
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +24,9 @@ class App extends React.Component {
           // pendingItem={this.state.pendingItem}
           value={this.state.pendingItem}
         />
+        
         {/* <div> {this.state.pendingItem}</div> */}
+        <List list={this.state.list}/>
       </div>
     );
   }
